@@ -1,0 +1,17 @@
+/* Custom styles */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#entryForm {
+    border-left: 4px solid #0d6efd;
+}
+
+table td, table th {
+    vertical-align: middle;
+}
+
+.editBtn {
+    margin-right: 5px;
+}
