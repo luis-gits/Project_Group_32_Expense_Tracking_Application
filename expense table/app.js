@@ -21,22 +21,24 @@ submitEntry.addEventListener("click", () => {
     const date = document.getElementById("date").value;
     const description = document.getElementById("description").value;
 
-	//check if all forms are filled
+    // Check if all fields are filled
     if (!amount || !category || !date) {
         alert("Please fill all required fields.");
         return;
     }
 
     if (editIndex !== null) {
-        //if an edit was made, edit the corresponding row
+        // Edit existing row
         const row = tableBody.children[editIndex];
         row.children[0].textContent = parseFloat(amount).toFixed(2);
         row.children[1].textContent = category;
         row.children[2].textContent = date;
         row.children[3].textContent = description;
     } else {
-        //add a new row
+        // Add new row to the table
         const row = document.createElement("tr");
+
+        row.classList.add('new-entry-row'); // Add the class for new rows
 
         row.innerHTML = `
             <td>${parseFloat(amount).toFixed(2)}</td>
