@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Expense Tracker</title>
+
+    <!-- link Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-light">
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-4">Financial Expense Tracker</h1>
+
+    <div class="text-center mb-4">
+        <button id="addEntryBtn" class="btn btn-primary">
+            Add Entry
+        </button>
+    </div>
+
+    <div id="entryForm" class="card p-4 mb-4 d-none">
+        <div class="row g-3">
+
+            <div class="col-md-3">
+                <label class="form-label">Amount</label>
+                <input type="number" id="amount" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                <select id="category" class="form-select">
+                    <option value="">Select Category</option>
+                    <option>Groceries</option>
+                    <option>Transportation</option>
+                    <option>Entertainment</option>
+                    <option>Rent</option>
+                    <option>Health</option>
+                    <option>Shopping</option>
+                    <option>Eating Out</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Date</label>
+                <input type="date" id="date" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Description (Optional)</label>
+                <input type="text" id="description" class="form-control">
+            </div>
+
+        </div>
+
+        <div class="text-end mt-3">
+            <button id="submitEntry" class="btn btn-success">Save Entry</button>
+        </div>
+    </div>
+
+    <div class="text-center mb-4">
+        <a href="http://localhost:3000/monthlyExpenses" class="btn btn-warning">Go to Graph</a>
+    </div>
+   
+    <div class="d-flex justify-content-end mb-2">
+        <select id="sortCategory" class="form-select w-auto">
+            <option value="">Sort by Category</option>
+            <option>Food</option>
+            <option>Transportation</option>
+            <option>Entertainment</option>
+            <option>Utilities</option>
+            <option>Other</option>
+        </select>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-dark" id="expenseTable">
+            <thead>
+                <tr>
+                    <th>Amount ($)</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th style="width: 150px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
